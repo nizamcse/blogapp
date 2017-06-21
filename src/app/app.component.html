@@ -1,17 +1,18 @@
 <md-toolbar color="primary">
-    <span>Custom Toolbar</span>
-
-    <md-toolbar-row>
-        <span>Second Line</span>
-        <span class="example-spacer"></span>
-        <md-icon class="example-icon">verified_user</md-icon>
-    </md-toolbar-row>
-
-    <md-toolbar-row>
-        <span>Third Line</span>
-        <span class="example-spacer"></span>
-        <md-icon class="example-icon">favorite</md-icon>
-        <md-icon class="example-icon">delete</md-icon>
-    </md-toolbar-row>
+    <span>Nizam's Blog</span>
+    <span class="example-spacer"></span>
+    <button md-button [mdMenuTriggerFor]="menu">
+        <md-icon>menu</md-icon> Menu
+    </button>
 </md-toolbar>
+
+<md-card class="example-card" *ngFor="let post of (posts ? posts.slice(0,10): []); let i = index">
+    <md-card-header>
+        <md-card-title>{{ post.title }}</md-card-title>
+    </md-card-header>
+    <md-card-actions>
+        <button md-button>LIKE</button>
+        <button md-button>SHARE</button>
+    </md-card-actions>
+</md-card>
 
